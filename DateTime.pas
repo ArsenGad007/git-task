@@ -10,10 +10,5 @@
     else if year mod 400 = 0 then
       res := True;
   
-  Println($'Год является високосным - {res}');
-  
-  var min := ReadInteger('Введите кол-во минут:');
-  Assert(min >= 0);
-  
-  Print($'Кол-во секунд: {min * 60}')
+  Print($'Год является високосным - {res}');
 end.
