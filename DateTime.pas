@@ -31,4 +31,28 @@
     Println('Кол-во дней в году 366')
   else
     Println('Кол-во дней в году 365');
+  
+  var (num1, num2) := ReadInteger2('Введите 2 целых числа:');
+  Assert((num1 > 0) and (num2 > 0));
+  
+  var sum := 0;
+  
+  if num1 > num2 then
+    Swap(num1, num2);
+  
+  for var i := num1 to num2 do
+  begin
+    var leap := False;
+    
+    if i mod 4 = 0 then
+      if i mod 100 <> 0 then
+        leap := True
+      else if i mod 400 = 0 then
+        leap := True;
+    if leap then
+      sum += 366
+    else
+      sum += 355;
+  end;
+  Println($'Cумма дней: {sum}');
 end.
