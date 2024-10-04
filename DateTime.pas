@@ -1,6 +1,6 @@
 ﻿begin
   var year := ReadInteger('Введите год:');
-  Assert(year > 0);
+  Assert(year >= 0);
   
   var res := False;
   
@@ -33,7 +33,7 @@
     Println('Кол-во дней в году 365');
   
   var (num1, num2) := ReadInteger2('Введите 2 целых числа:');
-  Assert((num1 > 0) and (num2 > 0));
+  Assert((num1 >= 0) and (num2 >= 0));
   
   var sum := 0;
   
@@ -55,4 +55,9 @@
       sum += 355;
   end;
   Println($'Cумма дней: {sum}');
+  
+  var hour := ReadInteger('Введите кол-во часов:');
+  Assert(hour >= 0);
+  
+  Println($'Cекунды: {hour * 3600}');
 end.
